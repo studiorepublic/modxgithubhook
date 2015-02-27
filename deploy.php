@@ -12,7 +12,7 @@
 	
 	//Initialise modx 
 	include("../core/model/modx/modx.class.php");
-    $modx= new modX();
+	$modx= new modX();
 	$modx->initialize("mgr");
 	 
 	// refresh the cache

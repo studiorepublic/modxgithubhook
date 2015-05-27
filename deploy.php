@@ -8,14 +8,7 @@
 	
 	//Pull from git 
 	$tmp = shell_exec('git pull origin master');
-	echo htmlentities(trim($tmp));
-	
-	//Initialise modx 
-	include("../core/model/modx/modx.class.php");
-	$modx= new modX();
-	$modx->initialize("mgr");
-	 
-	// refresh the cache
-	$modx->cacheManager->refresh();
-	
+	//Gitify build
+	$tmp2 = shell_exec('/usr/bin/Gitify/Gitify build');
+	mail('chris@studiorepublic.com','Git pull', htmlentities(trim($tmp))."\r\n".htmlentities(trim($tmp2)));
 ?>
